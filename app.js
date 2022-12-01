@@ -31,6 +31,10 @@ mongoose
   })
   .catch((err) => console.error(err));
 
+app.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
 app.use(userRoutes);
 app.use(adminRoutes);
 app.use(logoutRoute);
